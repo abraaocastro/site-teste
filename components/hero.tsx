@@ -2,9 +2,7 @@
 
 import Image from "next/image"
 import { ArrowUpRight, Sparkles } from "lucide-react"
-
-const WHATSAPP_URL =
-  "https://wa.me/5500000000000?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto"
+import { LeadFormDialog } from "@/components/lead-form-dialog"
 
 export function Hero() {
   return (
@@ -27,6 +25,7 @@ export function Hero() {
             src="/logo.png"
             alt=""
             fill
+            sizes="70vw"
             className="object-contain"
             priority
           />
@@ -71,15 +70,12 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mt-10 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-foreground text-background font-medium hover:bg-brand-glow transition-colors"
-            >
-              Pedir orçamento
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            <LeadFormDialog>
+              <button className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-foreground text-background font-medium hover:bg-brand-glow transition-colors">
+                Pedir orçamento
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
+            </LeadFormDialog>
             <a
               href="#servicos"
               className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-border hover:border-brand-glow/60 hover:bg-card/50 transition-all font-medium"

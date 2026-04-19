@@ -4,9 +4,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, ArrowUpRight } from "lucide-react"
-
-const WHATSAPP_URL =
-  "https://wa.me/5500000000000?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto"
+import { LeadFormDialog } from "@/components/lead-form-dialog"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -35,6 +33,7 @@ export function Header() {
                 src="/logo.png"
                 alt="Wise Tech Projects"
                 fill
+                sizes="40px"
                 className="object-contain transition-transform duration-500 group-hover:rotate-6"
                 priority
               />
@@ -64,15 +63,12 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-foreground text-background text-xs font-medium tracking-wide hover:bg-brand-glow transition-colors"
-            >
-              Começar projeto
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            <LeadFormDialog>
+              <button className="group inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-foreground text-background text-xs font-medium tracking-wide hover:bg-brand-glow transition-colors">
+                Começar projeto
+                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
+            </LeadFormDialog>
           </nav>
 
           <button
@@ -107,16 +103,15 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 w-full mt-2 px-4 py-3 rounded-full bg-foreground text-background text-sm font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Começar projeto
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
+            <LeadFormDialog>
+              <button
+                className="inline-flex items-center justify-center gap-1.5 w-full mt-2 px-4 py-3 rounded-full bg-foreground text-background text-sm font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Começar projeto
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </LeadFormDialog>
           </nav>
         </div>
       )}

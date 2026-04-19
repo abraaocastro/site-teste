@@ -61,7 +61,8 @@ export function About() {
                 src="/logo.png"
                 alt="Wise Tech Projects"
                 fill
-                className="object-contain p-10 relative z-10"
+                sizes="(max-width: 1024px) 90vw, 500px"
+                className="object-contain p-10 z-10"
               />
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-muted-foreground z-10">
                 <span>Wise Tech Projects</span>
