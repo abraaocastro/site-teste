@@ -34,7 +34,7 @@ export function Footer() {
                   alt="Wise Tech Projects"
                   fill
                   sizes="36px"
-                  className="object-contain"
+                  className="object-contain mix-blend-screen"
                 />
               </div>
               <div className="flex flex-col leading-none">

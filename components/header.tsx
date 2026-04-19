@@ -34,7 +34,7 @@ export function Header() {
                 alt="Wise Tech Projects"
                 fill
                 sizes="40px"
-                className="object-contain transition-transform duration-500 group-hover:rotate-6"
+                className="object-contain transition-transform duration-500 group-hover:rotate-6 mix-blend-screen"
                 priority
               />
             </div>
