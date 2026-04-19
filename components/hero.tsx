@@ -26,7 +26,7 @@ export function Hero() {
             alt=""
             fill
             sizes="70vw"
-            className="object-contain"
+            className="object-contain mix-blend-screen"
             priority
           />
         </div>
