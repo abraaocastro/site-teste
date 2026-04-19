@@ -1,0 +1,19 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1C6E9E"/>
+      <stop offset="100%" stop-color="#084D6E"/>
+    </linearGradient>
+    <clipPath id="cp">
+      <rect width="180" height="180" rx="40"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#cp)">
+    <rect width="180" height="180" fill="#05161F"/>
+    <!-- Stylized W/M crown mark -->
+    <g transform="translate(30 40)">
+      <path d="M10 5 L30 90 L50 25 L70 90 L90 5 L75 5 L60 65 L50 30 L40 65 L25 5 Z" fill="url(#wg)"/>
+      <circle cx="108" cy="85" r="8" fill="#1C6E9E"/>
+    </g>
+  </g>
+</svg>

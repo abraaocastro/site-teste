@@ -1,0 +1,208 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   Wise Tech Projects - Brand System
+   #084D6E Azul Petróleo Escuro (primary deep)
+   #1C6E9E Azul Royal (from logo)
+   #8E9DAB Cinza Cinéreo
+   #C0C0C0 Prata
+   ============================================ */
+
+:root {
+  --background: oklch(0.985 0.003 220);
+  --foreground: oklch(0.2 0.04 230);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.04 230);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.04 230);
+  --primary: oklch(0.38 0.08 230);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.008 230);
+  --secondary-foreground: oklch(0.25 0.05 230);
+  --muted: oklch(0.94 0.008 230);
+  --muted-foreground: oklch(0.5 0.02 230);
+  --accent: oklch(0.55 0.16 258);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.9 0.01 230);
+  --input: oklch(0.92 0.01 230);
+  --ring: oklch(0.38 0.08 230);
+  --radius: 0.75rem;
+
+  --brand-deep: #084D6E;
+  --brand-royal: #1C6E9E;
+  --brand-ash: #8E9DAB;
+  --brand-silver: #C0C0C0;
+  --brand-ink: #05314A;
+  --brand-glow: #3A8BC4;
+}
+
+.dark {
+  --background: #05161F;
+  --foreground: oklch(0.96 0.005 220);
+  --card: #0A2636;
+  --card-foreground: oklch(0.96 0.005 220);
+  --popover: #0A2636;
+  --popover-foreground: oklch(0.96 0.005 220);
+  --primary: #1C6E9E;
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: #0F3349;
+  --secondary-foreground: oklch(0.9 0.01 220);
+  --muted: #0F3349;
+  --muted-foreground: #8E9DAB;
+  --accent: #3A8BC4;
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.5 0.2 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: rgba(142, 157, 171, 0.15);
+  --input: #0F3349;
+  --ring: #1C6E9E;
+}
+
+@theme inline {
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-royal: var(--brand-royal);
+  --color-brand-ash: var(--brand-ash);
+  --color-brand-silver: var(--brand-silver);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-glow: var(--brand-glow);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'ss01', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--brand-royal);
+    color: white;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(142, 157, 171, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(142, 157, 171, 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .bg-grid-small {
+    background-image:
+      linear-gradient(to right, rgba(142, 157, 171, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(142, 157, 171, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .mask-radial-fade {
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+  }
+
+  .mask-bottom-fade {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #FFFFFF 0%, #8E9DAB 40%, #3A8BC4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glow-brand {
+    box-shadow: 0 0 80px rgba(28, 110, 158, 0.35);
+  }
+
+  .shadow-brand {
+    box-shadow: 0 10px 40px -12px rgba(8, 77, 110, 0.6), 0 0 0 1px rgba(142, 157, 171, 0.08);
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.04); }
+  }
+  .animate-breathe {
+    animation: breathe 6s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, -20px); }
+  }
+  .animate-drift {
+    animation: drift 18s ease-in-out infinite;
+  }
+}
