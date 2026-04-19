@@ -1,6 +1,9 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Mail, Instagram, Linkedin, MessageCircle } from "lucide-react"
+import { LeadFormDialog } from "@/components/lead-form-dialog"
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -30,6 +33,7 @@ export function Footer() {
                   src="/logo.png"
                   alt="Wise Tech Projects"
                   fill
+                  sizes="36px"
                   className="object-contain"
                 />
               </div>
@@ -91,15 +95,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="https://wa.me/5500000000000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-3 hover:text-brand-glow transition-colors"
-                >
-                  <MessageCircle className="w-4 h-4 text-muted-foreground group-hover:text-brand-glow transition-colors" />
-                  WhatsApp
-                </a>
+                <LeadFormDialog>
+                  <button className="group flex items-center gap-3 hover:text-brand-glow transition-colors text-sm">
+                    <MessageCircle className="w-4 h-4 text-muted-foreground group-hover:text-brand-glow transition-colors" />
+                    WhatsApp
+                  </button>
+                </LeadFormDialog>
               </li>
             </ul>
 

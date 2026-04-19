@@ -1,8 +1,8 @@
+"use client"
+
 import { ArrowUpRight, MessageSquare } from "lucide-react"
 import Image from "next/image"
-
-const WHATSAPP_URL =
-  "https://wa.me/5500000000000?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto"
+import { LeadFormDialog } from "@/components/lead-form-dialog"
 
 export function CTA() {
   return (
@@ -27,7 +27,7 @@ export function CTA() {
 
           {/* Giant logo watermark */}
           <div className="absolute -right-20 -bottom-20 w-96 h-96 opacity-10 pointer-events-none">
-            <Image src="/logo.png" alt="" fill className="object-contain" />
+            <Image src="/logo.png" alt="" fill sizes="384px" className="object-contain" />
           </div>
 
           <div className="relative px-6 py-16 md:px-16 md:py-24 lg:px-24">
@@ -49,16 +49,13 @@ export function CTA() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-brand-deep font-medium hover:bg-brand-silver transition-colors"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  Chamar no WhatsApp
-                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
+                <LeadFormDialog>
+                  <button className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-brand-deep font-medium hover:bg-brand-silver transition-colors">
+                    <MessageSquare className="w-4 h-4" />
+                    Chamar no WhatsApp
+                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </button>
+                </LeadFormDialog>
                 <a
                   href="mailto:contato@wisetechprojects.com"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-brand-silver/30 text-white hover:bg-white/5 transition-colors font-medium"
